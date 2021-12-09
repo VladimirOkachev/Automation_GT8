@@ -1,6 +1,6 @@
-const LoginPage = require('../../page_objects/login/login-page');
+const loginPage = require('../../page_objects/login/login-page');
 const loginUrl = 'https://beta.gigturbo.com';
-
+const { expect } = require('chai');
 
 describe('Login', () => {
     // This hook runs after each test
@@ -13,20 +13,20 @@ describe('Login', () => {
         browser.url(loginUrl);
         // Type in phone number and click on "=>" button
         // Type in code
-        LoginPage.loginDashbord();
+        loginPage.loginDashbord();
         // Wait for daschboard page displaid
-        LoginPage.DashboardPageVarify.waitForDisplayed();
+        loginPage.dashboardPageVarify.waitForDisplayed();
     })
 
     it('User should not be able to log in without phone number', () => {
         // Navigate to login page
         browser.url(loginUrl);
         //Click “Log In” button
-        LoginPage.buttonLogIn.click()
+        loginPage.buttonLogIn.click()
         //Click on "=>" button (arrow to the right) without typing phone number
-        LoginPage.buttonArrowLogin.click()
+        loginPage.buttonArrowLogin.click()
         // Wait for Phone number textbox is highlighted in red
-        LoginPage.LogintextboxHighlightedError.waitForDisplayed();
+        loginPage.logintextboxHighlightedError.waitForDisplayed();
     })
 
     it('User should be able to log out', () => {
@@ -34,12 +34,12 @@ describe('Login', () => {
         browser.url(loginUrl);
        // Type in phone number and click on "=>" button
         // Type in code
-        LoginPage.loginDashbord();
+        loginPage.loginDashbord();
         //Click on Profile icon on the top right
-        LoginPage.ProfileIcon.click()
+        loginPage.profileIcon.click()
         //Click on Logout batton
-        LoginPage.LogoutButton.click()
+        loginPage.logoutButton.click()
         //Wait for home page displaid
-        LoginPage.HomePageVarivy.waitForDisplayed();
+        loginPage.homePageVarivy.waitForDisplayed();
     })
 });

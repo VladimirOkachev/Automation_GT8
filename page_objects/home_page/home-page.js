@@ -2,12 +2,12 @@
 //const { expect } = require('chai');
 class Login {
     // Reusable selector getters that will help us to avoid selector duplicates
-    get FAQ() { return $('[href="/faq"]'); }
-    get CommunityGuidelines() { return $('[class="Button_button__sL3tD undefined "]'); }
-    get GigturboBasic() { return $('[class="Button_button__sL3tD undefined "]'); }
-    get Whatisgigturbo() { return $('h2=What is gigturbo?'); }
-    get Whatisgigturbo1par() { return $('[style="margin-top: 1rem;"]'); }
-    get Whatisgigturbo2par() { return $('[style="margin-top: 1.5rem;"]'); }
+    get fAQ() { return $('[href="/faq"]'); }
+    get communityGuidelines() { return $('[class="Button_button__sL3tD undefined "]'); }
+    get gigturboBasic() { return $('[class="Button_button__sL3tD undefined "]'); }
+    get whatisgigturbo() { return $('h2=What is gigturbo?'); }
+    get whatisgigturbo1par() { return $('[style="margin-top: 1rem;"]'); }
+    get whatisgigturbo2par() { return $('[style="margin-top: 1.5rem;"]'); }
 
 
 
@@ -16,15 +16,17 @@ class Login {
 
 
     // Helper method to avoid code duplication
+
+    //function helper
     login() {
-        this.FAQ.click();
-        this.FAQ.waitForDisplayed();
-        this.CommunityGuidelines.click();
-        this.CommunityGuidelines.waitForDisplayed();
-        this.GigturboBasic.click();
-        this.Whatisgigturbo.click();
-        this.Whatisgigturbo1par.waitForDisplayed()
-        this.Whatisgigturbo2par.waitForDisplayed()
+        this.fAQ.click();
+        this.fAQ.waitForDisplayed();
+        this.communityGuidelines.click();
+        this.communityGuidelines.waitForDisplayed();
+        this.gigturboBasic.click();
+        this.whatisgigturbo.click();
+        this.whatisgigturbo1par.waitForDisplayed()
+        this.whatisgigturbo2par.waitForDisplayed()
 
     }
 }
